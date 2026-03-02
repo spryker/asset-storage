@@ -38,11 +38,6 @@ class AssetStorageToAssetFacadeBridge implements AssetStorageToAssetFacadeInterf
         return $this->assetFacade->findAssetById($idAsset);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetCriteriaTransfer $assetCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\AssetCollectionTransfer
-     */
     public function getAssetCollection(AssetCriteriaTransfer $assetCriteriaTransfer): AssetCollectionTransfer
     {
         return $this->assetFacade->getAssetCollection($assetCriteriaTransfer);

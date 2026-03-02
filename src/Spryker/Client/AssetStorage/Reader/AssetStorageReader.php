@@ -37,11 +37,6 @@ class AssetStorageReader implements AssetStorageReaderInterface
      */
     protected $assetStorageMapper;
 
-    /**
-     * @param \Spryker\Client\AssetStorage\Dependency\Client\AssetStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\AssetStorage\Dependency\Service\AssetStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\AssetStorage\Mapper\AssetStorageMapperInterface $assetStorageMapper
-     */
     public function __construct(
         AssetStorageToStorageClientInterface $storageClient,
         AssetStorageToSynchronizationServiceInterface $synchronizationService,
@@ -52,11 +47,6 @@ class AssetStorageReader implements AssetStorageReaderInterface
         $this->assetStorageMapper = $assetStorageMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetStorageCriteriaTransfer $assetStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\AssetStorageCollectionTransfer
-     */
     public function getAssetStorageCollection(
         AssetStorageCriteriaTransfer $assetStorageCriteriaTransfer
     ): AssetStorageCollectionTransfer {
@@ -73,12 +63,6 @@ class AssetStorageReader implements AssetStorageReaderInterface
         return $this->assetStorageMapper->mapAssetStorageDataToAssetStorageTransfer($assetStorageTransferData[static::ASSETS_STORAGE_KEY]);
     }
 
-    /**
-     * @param string $assetSlot
-     * @param string $storeName
-     *
-     * @return string
-     */
     protected function generateKey(string $assetSlot, string $storeName): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

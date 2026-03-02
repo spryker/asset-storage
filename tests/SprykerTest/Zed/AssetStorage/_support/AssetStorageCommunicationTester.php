@@ -88,11 +88,6 @@ class AssetStorageCommunicationTester extends Actor
      */
     protected const ASSET_SLOT_DATA_KEY = 'assetSlot';
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetTransfer|null $assetTransfer
-     *
-     * @return void
-     */
     public function mockAssetFacade(?AssetTransfer $assetTransfer): void
     {
         $assetFacadeMock = Stub::make(
@@ -106,12 +101,6 @@ class AssetStorageCommunicationTester extends Actor
         $this->mockFactoryMethod('getRepository', new AssetStorageRepository());
     }
 
-    /**
-     * @param array $expectedStorageData
-     * @param string $accessSlot
-     *
-     * @return void
-     */
     public function assertAssetStorage(array $expectedStorageData, string $accessSlot = self::ASSET_SLOT_DEFAULT): void
     {
         $count = (new SpyAssetSlotStorageQuery())
@@ -129,11 +118,6 @@ class AssetStorageCommunicationTester extends Actor
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetTransfer $assetTransfer
-     *
-     * @return void
-     */
     public function haveAssetSlotStorageForAssetTransfer(AssetTransfer $assetTransfer): void
     {
         foreach ($assetTransfer->getStores() as $storeName) {

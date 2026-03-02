@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\AssetStorageCollectionTransfer;
 
 interface AssetStorageMapperInterface
 {
-    /**
-     * @param array $assetStorageTransferData
-     *
-     * @return \Generated\Shared\Transfer\AssetStorageCollectionTransfer
-     */
     public function mapAssetStorageDataToAssetStorageTransfer(
         array $assetStorageTransferData
     ): AssetStorageCollectionTransfer;

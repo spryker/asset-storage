@@ -15,11 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class AssetStorageEntityManager extends AbstractEntityManager implements AssetStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AssetSlotStorageTransfer $assetSlotStorageTransfer
-     *
-     * @return void
-     */
     public function saveAssetSlotStorage(AssetSlotStorageTransfer $assetSlotStorageTransfer): void
     {
         $assetSlotStorageEntity = $this->getFactory()->createAssetSlotStorageQuery()
@@ -31,11 +26,6 @@ class AssetStorageEntityManager extends AbstractEntityManager implements AssetSt
         $assetSlotStorageEntity->save();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetSlotStorageTransfer $assetSlotStorageTransfer
-     *
-     * @return void
-     */
     public function deleteAssetSlotStorage(AssetSlotStorageTransfer $assetSlotStorageTransfer): void
     {
         $assetSlotStorageEntity = $this->getFactory()->createAssetSlotStorageQuery()

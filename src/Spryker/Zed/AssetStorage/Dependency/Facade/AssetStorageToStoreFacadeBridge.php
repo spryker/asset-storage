@@ -24,11 +24,6 @@ class AssetStorageToStoreFacadeBridge implements AssetStorageToStoreFacadeInterf
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @param int $idStore
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getStoreById(int $idStore): StoreTransfer
     {
         return $this->storeFacade->getStoreById($idStore);

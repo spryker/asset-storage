@@ -27,11 +27,6 @@ class AssetStorageDependencyProvider extends AbstractDependencyProvider
      */
     public const CLIENT_STORAGE = 'CLIENT_STORAGE';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         parent::provideServiceLayerDependencies($container);
@@ -42,11 +37,6 @@ class AssetStorageDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addSynchronizationService(Container $container): Container
     {
         $container->set(static::SERVICE_SYNCHRONIZATION, function (Container $container) {
@@ -58,11 +48,6 @@ class AssetStorageDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_STORAGE, function (Container $container) {

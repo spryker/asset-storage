@@ -81,12 +81,6 @@ class AssetPublisherTriggerPlugin extends AbstractPlugin implements PublisherTri
         return static::COL_ID_ASSET;
     }
 
-    /**
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \Generated\Shared\Transfer\AssetCriteriaTransfer
-     */
     protected function createAssetCriteriaTransfer(int $offset, int $limit): AssetCriteriaTransfer
     {
         return (new AssetCriteriaTransfer())

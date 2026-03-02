@@ -17,9 +17,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class AssetStorageFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\AssetStorage\Reader\AssetStorageReaderInterface
-     */
     public function createAssetStorageReader(): AssetStorageReaderInterface
     {
         return new AssetStorageReader(
@@ -29,25 +26,16 @@ class AssetStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\AssetStorage\Mapper\AssetStorageMapperInterface
-     */
     public function createAssetStorageMapper(): AssetStorageMapperInterface
     {
         return new AssetStorageMapper();
     }
 
-    /**
-     * @return \Spryker\Client\AssetStorage\Dependency\Service\AssetStorageToSynchronizationServiceInterface
-     */
     public function getServiceSynchronization(): AssetStorageToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(AssetStorageDependencyProvider::SERVICE_SYNCHRONIZATION);
     }
 
-    /**
-     * @return \Spryker\Client\AssetStorage\Dependency\Client\AssetStorageToStorageClientInterface
-     */
     public function getStorageClient(): AssetStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(AssetStorageDependencyProvider::CLIENT_STORAGE);

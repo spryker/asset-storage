@@ -43,12 +43,6 @@ class AssetStorageWriter implements AssetStorageWriterInterface
      */
     protected $assetStorageRepository;
 
-    /**
-     * @param \Spryker\Zed\AssetStorage\Dependency\Facade\AssetStorageToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\AssetStorage\Dependency\Facade\AssetStorageToAssetFacadeInterface $assetFacade
-     * @param \Spryker\Zed\AssetStorage\Persistence\AssetStorageEntityManagerInterface $assetStorageEntityManager
-     * @param \Spryker\Zed\AssetStorage\Persistence\AssetStorageRepositoryInterface $assetStorageRepository
-     */
     public function __construct(
         AssetStorageToStoreFacadeInterface $storeFacade,
         AssetStorageToAssetFacadeInterface $assetFacade,
@@ -175,11 +169,6 @@ class AssetStorageWriter implements AssetStorageWriterInterface
         $this->unpublishByAssetTransfer($assetTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetTransfer $assetTransfer
-     *
-     * @return void
-     */
     protected function publishByAssetTransfer(AssetTransfer $assetTransfer): void
     {
         if (!$assetTransfer->getIdAsset()) {
@@ -214,12 +203,6 @@ class AssetStorageWriter implements AssetStorageWriterInterface
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetTransfer $assetTransfer
-     * @param \Generated\Shared\Transfer\AssetSlotStorageTransfer $assetSlotStorageTransfer
-     *
-     * @return void
-     */
     protected function updateAssetSlotStorageTransfer(
         AssetTransfer $assetTransfer,
         AssetSlotStorageTransfer $assetSlotStorageTransfer
@@ -269,12 +252,6 @@ class AssetStorageWriter implements AssetStorageWriterInterface
         return $assetSlotStorageTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetTransfer $assetTransfer
-     * @param \Generated\Shared\Transfer\AssetStorageTransfer $assetStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\AssetStorageTransfer
-     */
     protected function mapAssetTransferToAssetStorageTransfer(
         AssetTransfer $assetTransfer,
         AssetStorageTransfer $assetStorageTransfer
@@ -285,11 +262,6 @@ class AssetStorageWriter implements AssetStorageWriterInterface
             ->setAssetContent($assetTransfer->getAssetContent());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetTransfer $assetTransfer
-     *
-     * @return void
-     */
     protected function unpublishByAssetTransfer(AssetTransfer $assetTransfer): void
     {
         $assetSlotStorageTransfers = $this->assetStorageRepository->findAssetStoragesByAssetSlotAndStores(
@@ -304,12 +276,6 @@ class AssetStorageWriter implements AssetStorageWriterInterface
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetTransfer $assetTransfer
-     * @param \Generated\Shared\Transfer\AssetSlotStorageTransfer $assetSlotStorageTransfer
-     *
-     * @return void
-     */
     protected function removeAssetDataFromAssetSlotStorage(
         AssetTransfer $assetTransfer,
         AssetSlotStorageTransfer $assetSlotStorageTransfer
@@ -339,11 +305,6 @@ class AssetStorageWriter implements AssetStorageWriterInterface
         $this->assetStorageEntityManager->saveAssetSlotStorage($assetSlotStorageTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetTransfer $assetTransfer
-     *
-     * @return \Generated\Shared\Transfer\AssetTransfer
-     */
     protected function findAsset(AssetTransfer $assetTransfer): AssetTransfer
     {
         $assetConditionsTransfer = (new AssetConditionsTransfer())->addIdAsset($assetTransfer->getIdAsset());

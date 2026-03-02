@@ -11,17 +11,7 @@ use Generated\Shared\Transfer\AssetSlotStorageTransfer;
 
 interface AssetStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AssetSlotStorageTransfer $assetSlotStorageTransfer
-     *
-     * @return void
-     */
     public function saveAssetSlotStorage(AssetSlotStorageTransfer $assetSlotStorageTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetSlotStorageTransfer $assetSlotStorageTransfer
-     *
-     * @return void
-     */
     public function deleteAssetSlotStorage(AssetSlotStorageTransfer $assetSlotStorageTransfer): void;
 }

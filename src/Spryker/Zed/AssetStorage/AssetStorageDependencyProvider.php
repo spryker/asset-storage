@@ -29,11 +29,6 @@ class AssetStorageDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const FACADE_ASSET = 'FACADE_ASSET';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         parent::provideBusinessLayerDependencies($container);
@@ -44,11 +39,6 @@ class AssetStorageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -58,11 +48,6 @@ class AssetStorageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addFacadeStore(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container): AssetStorageToStoreFacadeInterface {
@@ -72,11 +57,6 @@ class AssetStorageDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function addAssetFacade(Container $container): Container
     {
         $container->set(static::FACADE_ASSET, function (Container $container): AssetStorageToAssetFacadeInterface {

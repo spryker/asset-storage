@@ -21,12 +21,6 @@ class AssetStorageMapper
      */
     protected const ASSETS_DATA_KEY = 'assets';
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetSlotStorageTransfer $assetSlotStorageTransfer
-     * @param \Orm\Zed\AssetStorage\Persistence\SpyAssetSlotStorage $assetSlotStorageEntity
-     *
-     * @return \Orm\Zed\AssetStorage\Persistence\SpyAssetSlotStorage
-     */
     public function mapAssetSlotStorageTransferToEntity(
         AssetSlotStorageTransfer $assetSlotStorageTransfer,
         SpyAssetSlotStorage $assetSlotStorageEntity
@@ -86,12 +80,6 @@ class AssetStorageMapper
         return $synchronizationDataTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\AssetStorage\Persistence\SpyAssetSlotStorage $assetSlotStorageEntity
-     * @param \Generated\Shared\Transfer\AssetSlotStorageTransfer $assetSlotStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\AssetSlotStorageTransfer
-     */
     protected function mapAssetSlotStorageEntityToTransfer(
         SpyAssetSlotStorage $assetSlotStorageEntity,
         AssetSlotStorageTransfer $assetSlotStorageTransfer

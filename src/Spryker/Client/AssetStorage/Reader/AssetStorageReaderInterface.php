@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\AssetStorageCriteriaTransfer;
 
 interface AssetStorageReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AssetStorageCriteriaTransfer $assetStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\AssetStorageCollectionTransfer
-     */
     public function getAssetStorageCollection(
         AssetStorageCriteriaTransfer $assetStorageCriteriaTransfer
     ): AssetStorageCollectionTransfer;

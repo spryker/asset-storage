@@ -40,9 +40,6 @@ class AssetWritePublisherTest extends Unit
      */
     protected $assetTransfer;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -55,9 +52,6 @@ class AssetWritePublisherTest extends Unit
         $this->tester->mockAssetFacade($this->assetTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testHandleWithCorrectDataSuccessfully(): void
     {
         // Arrange
@@ -95,9 +89,6 @@ class AssetWritePublisherTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesAssetDataIfStoreWasDeleted(): void
     {
         // Arrange
@@ -129,9 +120,6 @@ class AssetWritePublisherTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function testAddsAssetDataIfStoreWasAdded(): void
     {
         // Arrange
@@ -171,9 +159,6 @@ class AssetWritePublisherTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesAssetDataIfSlotWasChanged(): void
     {
         // Arrange
@@ -214,9 +199,6 @@ class AssetWritePublisherTest extends Unit
         ], $accessSlot);
     }
 
-    /**
-     * @return void
-     */
     public function testAddsAssetDataIfThereIsAnotherAssetForCurrentSlot(): void
     {
         // Arrange
@@ -278,9 +260,6 @@ class AssetWritePublisherTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function testSkipPersistenceDueToMissingRequiredIdAsset(): void
     {
         // Arrange

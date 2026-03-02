@@ -21,9 +21,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class AssetStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\AssetStorage\Business\Publisher\AssetStorageWriterInterface
-     */
     public function createAssetStorageWriter(): AssetStorageWriterInterface
     {
         return new AssetStorageWriter(
@@ -34,17 +31,11 @@ class AssetStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\AssetStorage\Dependency\Facade\AssetStorageToStoreFacadeInterface
-     */
     public function getStoreFacade(): AssetStorageToStoreFacadeInterface
     {
         return $this->getProvidedDependency(AssetStorageDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\AssetStorage\Dependency\Facade\AssetStorageToAssetFacadeInterface
-     */
     public function getAssetFacade(): AssetStorageToAssetFacadeInterface
     {
         return $this->getProvidedDependency(AssetStorageDependencyProvider::FACADE_ASSET);

@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\AssetStorage\Comminication\Plugin\Event\Listener;
+namespace SprykerTest\Zed\AssetStorage\Communication\Plugin\Event\Listener;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\AssetTransfer;
@@ -20,7 +20,7 @@ use SprykerTest\Zed\AssetStorage\AssetStorageCommunicationTester;
  * @group SprykerTest
  * @group Zed
  * @group AssetStorage
- * @group Comminication
+ * @group Communication
  * @group Plugin
  * @group Event
  * @group Listener
@@ -44,9 +44,6 @@ class AssetStorageUnpublishListenerTest extends Unit
      */
     protected $assetStorageUnpublishListener;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class AssetStorageUnpublishListenerTest extends Unit
         $this->tester->haveAssetSlotStorageForAssetTransfer($this->assetTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testHandleWithCorrectDataSuccessfully(): void
     {
         // Arrange
@@ -82,9 +76,6 @@ class AssetStorageUnpublishListenerTest extends Unit
         $this->tester->assertAssetStorage([]);
     }
 
-    /**
-     * @return void
-     */
     public function testHandleWithWrongAssetIdReturnsDataWithoutChanges(): void
     {
         // Arrange

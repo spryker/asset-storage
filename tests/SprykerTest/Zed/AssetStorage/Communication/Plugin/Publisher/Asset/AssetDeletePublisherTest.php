@@ -39,9 +39,6 @@ class AssetDeletePublisherTest extends Unit
      */
     protected $assetTransfer;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class AssetDeletePublisherTest extends Unit
         $this->tester->haveAssetSlotStorageForAssetTransfer($this->assetTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testHandleWithCorrectDataSuccessfully(): void
     {
         // Arrange
@@ -77,9 +71,6 @@ class AssetDeletePublisherTest extends Unit
         $this->tester->assertAssetStorage([]);
     }
 
-    /**
-     * @return void
-     */
     public function testHandleWithWrongAssetIdReturnsDataWithoutChanges(): void
     {
         // Arrange
@@ -127,9 +118,6 @@ class AssetDeletePublisherTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesAssetDataOfAnotherAssetForCurrentSlot(): void
     {
         // Arrange

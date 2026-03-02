@@ -22,10 +22,5 @@ interface AssetStorageToAssetFacadeInterface
      */
     public function findAssetById(int $idAsset): ?AssetTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\AssetCriteriaTransfer $assetCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\AssetCollectionTransfer
-     */
     public function getAssetCollection(AssetCriteriaTransfer $assetCriteriaTransfer): AssetCollectionTransfer;
 }

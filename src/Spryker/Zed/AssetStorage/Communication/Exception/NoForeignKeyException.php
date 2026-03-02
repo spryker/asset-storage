@@ -11,9 +11,6 @@ use Propel\Runtime\Exception\PropelException;
 
 class NoForeignKeyException extends PropelException
 {
-    /**
-     * @param string $foreignKeyName
-     */
     public function __construct(string $foreignKeyName)
     {
         $message = sprintf('No foreign key %s', $foreignKeyName);

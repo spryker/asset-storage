@@ -11,9 +11,6 @@ use Exception;
 
 class AssetStorageEntityNotFound extends Exception
 {
-    /**
-     * @param int $idAssetSlotStorage
-     */
     public function __construct(int $idAssetSlotStorage)
     {
         $message = sprintf('No asset storage entity with id %s', $idAssetSlotStorage);
