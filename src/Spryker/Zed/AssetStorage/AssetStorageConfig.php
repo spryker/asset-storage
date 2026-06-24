@@ -12,6 +12,8 @@ use Spryker\Zed\Kernel\AbstractBundleConfig;
 class AssetStorageConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * The column name for the asset_slot field.
      *
      * @var string
@@ -19,6 +21,8 @@ class AssetStorageConfig extends AbstractBundleConfig
     public const COL_ASSET_SLOT = 'spy_asset.asset_slot';
 
     /**
+     * @api
+     *
      * The column name for the fk_asset field.
      *
      * @var string
@@ -26,6 +30,8 @@ class AssetStorageConfig extends AbstractBundleConfig
     public const COL_FK_ASSET = 'spy_asset_store.fk_asset';
 
     /**
+     * @api
+     *
      * The column name for the fk_store field.
      *
      * @var string
